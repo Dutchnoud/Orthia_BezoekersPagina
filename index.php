@@ -276,7 +276,7 @@ function buildRows($start, $eind, $patienten, $planningen) {
   });
 </script>
 <div style="position: fixed; bottom: 16px; right: 16px; background: var(--accent); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-family: var(--font-body);">
-    v1.0
+    v1.1
 </div>
 </body>
 </html>
