@@ -4,11 +4,12 @@ pipeline {
         stage('Code ophalen') {
             steps {
                 echo 'Code wordt opgehaald van GitHub...'
+                checkout scm
             }
         }
-        stage('Deploy') {
+        stage('Deploy naar Apache') {
             steps {
-                echo 'Code wordt gedeployed naar Apache...'
+                sh 'cp -r * /var/www/html/'
             }
         }
     }
