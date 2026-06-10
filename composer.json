@@ -1,0 +1,8 @@
+{
+    "name": "dutchnoud/orthia-bezoekerspagina",
+    "description": "Orthia bezoekersplanningssysteem",
+    "type": "project",
+    "require": {
+        "php": ">=8.0"
+    }
+}
