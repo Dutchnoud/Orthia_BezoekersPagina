@@ -1,0 +1,12 @@
+{
+    "_readme": [
+        "This file is @generated automatically"
+    ],
+    "content-hash": "abc123",
+    "packages": [],
+    "packages-dev": [],
+    "platform": {
+        "php": ">=8.0"
+    },
+    "platform-dev": []
+}
