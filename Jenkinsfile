@@ -11,7 +11,7 @@ pipeline {
     steps {
         withCredentials([string(credentialsId: 'snyk-token-string', variable: 'SNYK_TOKEN')]) {
             sh "/var/jenkins_home/snyk auth $SNYK_TOKEN"
-            sh "/var/jenkins_home/snyk code test --report --project-name=Orthia_BezoekersPageina || true"
+            sh "/var/jenkins_home/snyk code test --report --project-name=Orthia_BezoekersPagina || true"
         }
     }
 }
