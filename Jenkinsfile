@@ -10,10 +10,8 @@ pipeline {
         stage('Snyk Code Scan') {
     steps {
         withCredentials([string(credentialsId: 'snyk-token-string', variable: 'SNYK_TOKEN')]) {
-            script {
-                def snykHome = tool name: 'Orthia_Snyk', type: 'io.snyk.jenkins.tools.SnykInstallation'
-                sh "${snykHome}/snyk code test --org=dutchnoud || true"
-            }
+            sh "/var/jenkins_home/snyk auth $SNYK_TOKEN"
+            sh "/var/jenkins_home/snyk code test || true"
         }
     }
 }
