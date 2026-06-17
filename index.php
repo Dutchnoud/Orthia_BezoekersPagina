@@ -1,4 +1,5 @@
 <?php
+#test.1
 $conn = new mysqli("mysql", "root", "Admin@123", "orthia");
 if ($conn->connect_error) die("Verbinding mislukt: " . $conn->connect_error);
 
