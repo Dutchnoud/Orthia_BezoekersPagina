@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        MAJOR_VERSION = '1'
+    }
     stages {
         stage('Code ophalen') {
             steps {
@@ -17,6 +20,7 @@ pipeline {
         }
         stage('Versie bijwerken') {
             steps {
+                sh "sed -i 's/__MAJOR__/${MAJOR_VERSION}/' index.php"
                 sh "sed -i 's/__VERSION__/${BUILD_NUMBER}/' index.php"
             }
         }
