@@ -262,6 +262,7 @@ function buildRows($start, $eind, $patienten, $planningen) {
     </form>
   </div>
 
+    
 <script>
   function toggleDropdown(id) {
     const list = document.getElementById('list-' + id);
