@@ -20,8 +20,16 @@ pipeline {
         }
         stage('Versie bijwerken') {
             steps {
-                sh "sed -i 's/__MAJOR__/${MAJOR_VERSION}/' index.php"
-                sh "sed -i 's/__VERSION__/${BUILD_NUMBER}/' index.php"
+                script {
+                    def versionFile = "/var/jenkins_home/version_${MAJOR_VERSION}.txt"
+                    def minorVersion = 0
+                    if (fileExists(versionFile)) {
+                        minorVersion = readFile(versionFile).trim().toInteger() + 1
+                    }
+                    writeFile file: versionFile, text: "${minorVersion}"
+                    sh "sed -i 's/__MAJOR__/${MAJOR_VERSION}/' index.php"
+                    sh "sed -i 's/__VERSION__/${minorVersion}/' index.php"
+                }
             }
         }
         stage('Deploy naar Apache') {
