@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        MAJOR_VERSION = '2'
+        MAJOR_VERSION = '3'
     }
     stages {
         stage('Code ophalen') {
